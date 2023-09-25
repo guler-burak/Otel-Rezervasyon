@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="tr">
 
 <head>
@@ -16,7 +17,7 @@
     <link rel="icon" href="favicon.ico">
 
     <!--Title-->
-    <title>404 | Otel, Tatil Köyü ve Konaklama</title>
+    <title>Anasayfa - Otel, Tatil Köyü ve Konaklama</title>
 
     <!--CSS styles-->
     <link rel="stylesheet" media="all" href="/static/src/css/bootstrap.css" />
@@ -113,9 +114,10 @@
 
                         <ul class="navigation-left">
                             <li>
-                                <a href="index.html">Anasayfa <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
-                                <ul>
-                                    <li><a href="index.html">Ana Sayfa - Rezervasyon tanıtımı</a></li>
+                                <li>
+                                    <a href="{% url 'index' %}">Anasayfa <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                    <ul>
+                                        <li><a href="{% url 'index' %}">Anasayfa - Rezervasyon tanıtımı</a></li>
                                     <li><a href="index-2.html">Ana Sayfa - Rezervasyon kutusu</a></li>
                                     <li><a href="index-3.html">Ana Sayfa - Odaların tanıtımı</a></li>
                                 </ul>
@@ -164,91 +166,3 @@
             </div> <!--/container-->
 
         </header>
-
-        <!-- ========================  404 ======================== -->
-
-        <section class="not-found">
-            <div class="container">
-                <h1 class="title" data-title="404">404</h1>
-                <div class="h4 subtitle">Üzgünüm! Sayfa bulunamadı.</div>
-                <p>İstenen URL bu sunucuda bulunamadı. Tüm bildiğimiz bu.</p>
-                <p><a href="#">Buraya</a> tıklayarak ana sayfaya gidin.</p>
-            </div>
-        </section>
-
-
-
-        <!-- ========================  Subscribe ======================== -->
-
-        <section class="subscribe">
-            <div class="container">
-                <div class="box">
-                    <h2 class="title">Abone ol</h2>
-                    <div class="text">
-                        <p>& ücretsiz premium hediyeleri alın</p>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" value="" placeholder="Abone Ol" class="form-control" />
-                        <button class="btn btn-sm btn-main">Git</button>                        
-                    </div>
-                </div>
-            </div>
-        </section> 
-
-        <!-- ================== Footer  ================== -->
-
-        <footer>
-            <div class="container">
-
-                <!--footer links-->
-                <div class="footer-links">
-                    <div class="row">
-                        <div class="col-sm-6 footer-left">
-                            <a href="#">Site Haritası</a> &nbsp; | &nbsp; <a href="#">Gizlilik Politikası</a> | &nbsp; <a href="#">Misafir Defteri</a>
-                        </div>
-                        <div class="col-sm-6 footer-right">
-                            <a href="#">Galeri</a> &nbsp; | &nbsp; <a href="#">Rezervasyonlar</a> | &nbsp; <a href="#">Yardım Merkezi</a>
-                        </div>                        
-                    </div>
-                </div>
-
-                <!--footer social-->
-
-                <div class="footer-social">
-                    <div class="row">
-                        <div class="col-sm-12 text-center hidden">
-                            <a href="" class="footer-logo"><img src="/static/src/images/logo.png" alt="Alternate Text" /></a>
-                        </div>
-                        <div class="col-sm-12 icons">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-12 copyright">
-                            <!-- <small>Copyright &copy; 2017 &nbsp; | &nbsp; <a href="https://themeforest.net/item/colina-hotel-website-template/20977257">Buy Colina Template</a></small> -->
-                        </div>
-                        <div class="col-sm-12 text-center">
-                            <img src="/static/src/images/logo-footer.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-    </div> <!--/wrapper-->
-
-    <!--JS files-->
-    <script src="/static/src/js/jquery.min.js"></script>
-    <script src="/static/src/js/jquery-ui.js"></script>
-    <script src="/static/src/js/jquery.bootstrap.js"></script>
-    <script src="/static/src/js/jquery.magnific-popup.js"></script>
-    <script src="/static/src/js/jquery.owl.carousel.js"></script>
-    <script src="/static/src/js/main.js"></script>
-
-</body>
-
-</html>

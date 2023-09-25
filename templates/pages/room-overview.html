@@ -1,5 +1,6 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
 
 <head>
     <meta charset="utf-8">
@@ -16,18 +17,18 @@
     <link rel="icon" href="favicon.ico">
 
     <!--Title-->
-    <title>Room overview | Colina - Hotel, Resort & Accommodation Website Template</title>
+    <title>Odaya genel bakış | Colina -  Otel, Tatil Köyü ve Konaklama</title>
 
     <!--CSS styles-->
-    <link rel="stylesheet" media="all" href="css/bootstrap.css" />
-    <link rel="stylesheet" media="all" href="css/animate.css" />
-    <link rel="stylesheet" media="all" href="css/font-awesome.css" />
-    <link rel="stylesheet" media="all" href="css/linear-icons.css" />
-    <link rel="stylesheet" media="all" href="css/hotel-icons.css" />
-    <link rel="stylesheet" media="all" href="css/magnific-popup.css" />
-    <link rel="stylesheet" media="all" href="css/owl.carousel.css" />
-    <link rel="stylesheet" media="all" href="css/datepicker.css" />
-    <link rel="stylesheet" media="all" href="css/theme.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/bootstrap.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/animate.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/font-awesome.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/linear-icons.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/hotel-icons.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/magnific-popup.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/owl.carousel.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/datepicker.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/theme.css" />
 
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&amp;subset=latin-ext" rel="stylesheet">
@@ -75,11 +76,11 @@
                     <div class="navigation-top-right">
                         <a class="box" href="#">
                             <i class="icon icon-star"></i> 
-                            Special offers
+                            Özel Teklifler
                         </a>
                         <a class="box" href="reservation-1.html">
                             <i class="icon icon-tag"></i> 
-                            Reservations
+                            Rezervasyonlar
                         </a>
                         <a class="box" href="#">
                             <i class="icon icon-phone-handset"></i> 
@@ -96,8 +97,8 @@
 
                     <div class="logo animated fadeIn">
                         <a href="index.html">
-                            <img class="logo-desktop" src="assets/images/logo.png" alt="Alternate Text" />
-                            <img class="logo-mobile" src="assets/images/logo-mobile.png" alt="Alternate Text" />
+                            <img class="logo-desktop" src="/static/src/images/logo.png" alt="Alternate Text" />
+                            <img class="logo-mobile" src="/static/src/images/logo-mobile.png" alt="Alternate Text" />
                         </a>
                     </div>
 
@@ -113,29 +114,29 @@
 
                         <ul class="navigation-left">
                             <li>
-                                <a href="index.html">Home <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="{% url 'index' %}">Anasayfa <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="index.html">Home - Booking intro</a></li>
-                                    <li><a href="index-2.html">Home - Booking box</a></li>
-                                    <li><a href="index-3.html">Home - Rooms intro</a></li>
+                                    <li><a href="index.html">Ana Sayfa - Rezervasyon tanıtımı</a></li>
+                                    <li><a href="index-2.html">Ana Sayfa - Rezervasyon kutusu</a></li>
+                                    <li><a href="index-3.html">Ana Sayfa - Odaların tanıtımı</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Pages <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="#">Sayfalar <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="rooms-category.html">Rooms category</a></li>
-                                    <li><a href="room-overview.html">Room overview</a></li>
-                                    <li><a href="404.html">404 Not found</a></li>
-                                    <li><a href="shortcodes.html">Shortcodes</a></li>
+                                    <li><a href="about.html">Hakkımızda</a></li>
+                                    <li><a href="rooms-category.html">Oda Kategorileri</a></li>
+                                    <li><a href="room-overview.html">Oda İncelemesi</a></li>
+                                    <!-- <li><a href="404.html">404 Not found</a></li>
+                                    <li><a href="shortcodes.html">Shortcodes</a></li> -->
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Booking <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="#">Rezervasyon <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="reservation-1.html">Booking step 1</a></li>
-                                    <li><a href="reservation-2.html">Booking step 2</a></li>
-                                    <li><a href="reservation-3.html">Booking step 3</a></li>
+                                    <li><a href="reservation-1.html">Rezervasyon adımı 1</a></li>
+                                    <li><a href="reservation-2.html">Rezervasyon adımı 2</a></li>
+                                    <li><a href="reservation-3.html">Rezervasyon adımı 3</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -144,17 +145,17 @@
 
                         <ul class="navigation-right">
                             <li>
-                                <a href="facility.html">Facilities</a>
+                                <a href="facility.html">Tesisler</a>
                             </li>
                             <li>
                                 <a href="#">Blog <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="blog-category.html">Blog category</a></li>
-                                    <li><a href="blog-item.html">Blog item</a></li>
+                                    <li><a href="blog-category.html">Blog Kategorisi</a></li>
+                                    <li><a href="blog-item.html">Blog Gönderisi</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="contact.html">İletişim</a>
                             </li>
                         </ul>
 
@@ -171,10 +172,10 @@
 
             <!-- ===  Page header === -->
 
-            <div class="page-header" style="background-image:url(assets/images/header-1.jpg)">
+            <div class="page-header" style="background-image:url(/static/src/images/header-1.jpg)">
                 <div class="container">
-                    <h2 class="title">Luxury appartment</h2>
-                    <p>Available from 199€ per night</p>
+                    <h2 class="title">Lüks daire</h2>
+                    <p>Gecelik 199€'dan başlayan fiyatlarla</p>
                 </div>
             </div>
 
@@ -185,26 +186,13 @@
                 <div class="room-gallery">
                     <div class="container">
                         <div class="owl-slider owl-theme owl-slider-gallery">
+                            {% for room_image_url in room_image_urls %}
 
                             <!-- === slide item === -->
 
-                            <div class="item" style="background-image:url(assets/images/room-4.jpg)">
-                                <img src="assets/images/room-4.jpg" alt="" />
+                            <div class="item" style="background-image: url('{{ room_image_url }}')">
                             </div>
-
-                            <!-- === slide item === -->
-
-                            <div class="item" style="background-image:url(assets/images/room-2.jpg)">
-                                <img src="assets/images/room-2.jpg" alt="" />
-                            </div>
-
-
-                            <!-- === slide item === -->
-
-                            <div class="item" style="background-image:url(assets/images/room-1.jpg)">
-                                <img src="assets/images/room-1.jpg" alt="" />
-                            </div>
-
+                            {% endfor %}
 
                         </div> <!--/owl-slider-->
 
@@ -250,7 +238,7 @@
                                         <ul class="guest-list">
 
                                             <li class="header">
-                                                Please choose number of guests <span class="qty-apply"><i class="icon icon-cross"></i></span>
+                                                Lütfen konuk sayısını seçin<span class="qty-apply"><i class="icon icon-cross"></i></span>
                                             </li>
 
                                             <!--=== adults ===-->
@@ -264,7 +252,7 @@
                                                 </div>
 
                                                 <div>
-                                                    <span>Adults <small>16+ years</small></span>
+                                                    <span>Yetişkinler  <small>16+ yaş</small></span>
                                                 </div>
 
                                                 <!--=== Add/remove quantity buttons ===-->
@@ -289,7 +277,7 @@
                                                 <!--=== Label ===-->
 
                                                 <div>
-                                                    <span>Children <small>2-11 years</small></span>
+                                                    <span>Çocuklar <small>2-11 yaş</small></span>
                                                 </div>
 
 
@@ -315,7 +303,7 @@
                                                 <!--=== Label ===-->
 
                                                 <div>
-                                                    <span>Infants <small>Under 2 years</small></span>
+                                                    <span>Bebekler <small>2 yaş altı</small></span>
                                                 </div>
 
                                                 <!--=== Add/remove quantity buttons ===-->
@@ -333,11 +321,10 @@
 
                                 <div class="col-xs-12 col-sm-4">
                                     <a href="reservation-1.html" class="btn btn-clean">
-                                        Book now
-                                        <small>Best Prices Guaranteed</small>
+                                        Şimdi rezervasyon yapın
+                                        <small>En İyi Fiyat Garantisi</small>
                                     </a>
-                                </div>
-
+                                </div>                                
                             </div> <!--/row-->
                         </div><!--/booking-wrapper-->
                     </div> <!--/container-->
@@ -355,7 +342,7 @@
 
                                 <div class="room-block room-aminities">
 
-                                    <h2 class="title">Room aminities</h2>
+                                    <h2 class="title">Oda Olanakları</h2>
 
                                     <div class="row">
 
@@ -365,7 +352,7 @@
                                             <figure>
                                                 <figcaption>
                                                     <span class="hotelicon hotelicon-air-condition"></span>
-                                                    <p>Aircondition</p>
+                                                    <p>Klima</p>
                                                 </figcaption>
                                             </figure>
                                         </div>
@@ -376,7 +363,7 @@
                                             <figure>
                                                 <figcaption>
                                                     <span class="hotelicon hotelicon-king-bed"></span>
-                                                    <p>1 Kingsize bed</p>
+                                                    <p>1 King Boyutlu Yatak</p>
                                                 </figcaption>
                                             </figure>
                                         </div>
@@ -387,7 +374,7 @@
                                             <figure>
                                                 <figcaption>
                                                     <span class="hotelicon hotelicon-guest"></span>
-                                                    <p>2 People</p>
+                                                    <p>2 kişi</p>
                                                 </figcaption>
                                             </figure>
                                         </div>
@@ -398,7 +385,7 @@
                                             <figure>
                                                 <figcaption>
                                                     <span class="hotelicon hotelicon-wifi"></span>
-                                                    <p>Internet</p>
+                                                    <p>İnternet</p>
                                                 </figcaption>
                                             </figure>
                                         </div>
@@ -409,7 +396,7 @@
                                             <figure>
                                                 <figcaption>
                                                     <span class="hotelicon hotelicon-washer"></span>
-                                                    <p>Washer</p>
+                                                    <p>Çamaşır Makinesi</p>
                                                 </figcaption>
                                             </figure>
                                         </div>
@@ -420,7 +407,7 @@
                                             <figure>
                                                 <figcaption>
                                                     <span class="hotelicon hotelicon-roomservice"></span>
-                                                    <p>Room service</p>
+                                                    <p>Oda Servisi</p>
                                                 </figcaption>
                                             </figure>
                                         </div>
@@ -431,28 +418,28 @@
                                 <!-- === Room block === -->
 
                                 <div class="room-block">
-                                    <h2 class="title">Room overview</h2>
-                                    <p>
-                                        The Superior Rooms pay tribute to fashion and craftsmanship. The rooms are approximately 19m2 with views of Rue d'Alger and Jardin des Tuileries.
-                                        The selection and pairing of materials has been carefully chosen to give you a cool experience. The super soft bed topper is simply extravagant!
-                                        Every room is different but the colour palette uses unique and expertly matched hues.
-                                        An openwork brass screen separates the bathroom from the bedroom. This original feature helps make every room your very own cosy and peaceful haven.
-                                        Bathrobes, slippers and SOTHYS toiletries are provided in the bathroom to pamper you.
-                                    </p>
+                                    <h2 class="title">Oda İncelemesi</h2>
+                                <p>
+                                 Süperior Odalar, modaya ve el işçiliğine saygı göstermektedir. Odalar yaklaşık olarak 19m2 büyüklüğündedir ve Rue d'Alger ve Jardin des Tuileries manzarasına sahiptir.
+                                 Malzemelerin seçimi ve eşleştirilmesi size harika bir deneyim sunmak için özenle seçilmiştir. Süper yumuşak yatak üstü kaplama sadece şaşırtıcıdır!
+                                 Her oda farklıdır ancak renk paleti benzersiz ve ustalıkla eşleştirilmiş tonları kullanır.
+                                 Bir döküm pirinç ekran, banyoyu yatak odasından ayırır. Bu orijinal özellik, her odanın kendi sıcak ve huzurlu sığınakınız olmasına yardımcı olur.
+                                 Bornozlar, terlikler ve SOTHYS banyo malzemeleri size şımartmak için banyoda sunulmaktadır.
+                                </p>
                                 </div>
 
                                 <!-- === Room block === -->
 
                                 <div class="room-block">
 
-                                    <h2 class="title">House rules</h2>
+                                    <h2 class="title">Ev Kuralları</h2>
 
                                     <!-- === box === -->
 
                                     <div class="box">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <p><strong>Check-In</strong></p>
+                                                <p><strong>Giriş</strong></p>
                                             </div>
                                             <div class="col-md-8">
                                                 <p>14:00 - 22:00</p>
@@ -465,7 +452,7 @@
                                     <div class="box">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <p><strong>Check-out</strong></p>
+                                                <p><strong>Çıkış</strong></p>
                                             </div>
                                             <div class="col-md-8">
                                                 <p>14:00 - 22:00</p>
@@ -478,7 +465,7 @@
                                     <div class="box">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <p><strong>Luggage storage</strong></p>
+                                                <p><strong>Bagaj Saklama</strong></p>
                                             </div>
                                             <div class="col-md-8">
                                                 <p>14:00 - 22:00</p>
@@ -491,11 +478,11 @@
                                     <div class="box">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <p><strong>Cancellation/prepayment</strong></p>
+                                                <p><strong>İptal/Ön Ödeme</strong></p>
                                             </div>
                                             <div class="col-md-8">
                                                 <p>
-                                                    Cancellation and prepayment policies vary according to room type. Please enter the dates of your stay and check the conditions of your required room.
+                                                    İptal ve ön ödeme politikaları oda tipine göre değişiklik gösterir. Lütfen konaklama tarihlerinizi girin ve gereken oda koşullarını kontrol edin.
                                                 </p>
                                             </div>
                                         </div>
@@ -506,13 +493,13 @@
                                     <div class="box">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <p><strong>Children and extra beds</strong></p>
+                                                <p><strong>Çocuklar ve ek yataklar</strong></p>
                                             </div>
                                             <div class="col-md-8">
-                                                <p>All children are welcome.</p>
-                                                <p>One child under 6 years is charged EUR 50 per night when using existing beds.</p>
-                                                <p>There is no capacity for extra beds in the room.</p>
-                                                <p>Supplements are not calculated automatically in the total costs and will have to be paid for separately during your stay.                                        </p>
+                                            <p>Tüm çocuklar kabul edilir.</p>
+                                            <p>6 yaşın altındaki bir çocuk mevcut yatakları kullanırken gecelik 50 EUR ücret alınır.</p>
+                                            <p>Odaya ek yatak eklenemez.</p>
+                                            <p>Ekstralar toplam ücrete otomatik olarak dahil edilmez ve konaklamanız sırasında ayrıca ödenmelidir.
                                             </div>
                                         </div>
                                     </div>
@@ -522,10 +509,10 @@
                                     <div class="box">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <p><strong>Pets</strong></p>
+                                                <p><strong>Evcil Hayvanlar</strong></p>
                                             </div>
                                             <div class="col-md-8">
-                                                <p>Pets are not allowed.</p>
+                                                <p>Evcil hayvanlara izin verilmez.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -535,22 +522,20 @@
                                     <div class="box">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <p><strong>Additional info</strong></p>
+                                                <p><strong>Ek Bilgi</strong></p>
                                             </div>
                                             <div class="col-md-8">
-                                                <p>Please note that the restaurant is closed each Sunday.</p>
-                                                <p>The restaurant will also be closed during Christmas (25-26 December).</p>
-                                                <p>Please note that parking spaces cannot be reserved or guaranteed.</p>
+                                                <p>Lütfen restoranın her Pazar günü kapalı olduğunu unutmayın.</p>
+                                                <p>Restoran ayrıca Noel (25-26 Aralık) sırasında da kapalı olacaktır.</p>
+                                                <p>Lütfen park alanlarının rezerve edilemeyeceğini veya garanti edilemeyeceğini unutmayın.</p>
                                                 <p>
-                                                    For a group booking more than 5 rooms up to 4 weeks prior to arrival cancellation is
-                                                    100% free of charge, within 2 until 4 weeks 50% free of charge, and within 2 weeks the
-                                                    property will charge you in full. Please note that Ozo hotel always charges city tax
-                                                    prior to your arrival with the non-refundable rate or group booking.
+                                                    Grup rezervasyonları için, varış tarihinden itibaren 4 haftaya kadar olan süre içinde 5 veya daha fazla oda için iptal ücretsizdir, 
+                                                    2 ila 4 hafta içinde %50 ücretsizdir ve 2 hafta içinde tesis tam ücreti tahsil edecektir. Lütfen Ozo otelin her zaman şehir vergisi 
+                                                    uyguladığını ve iade edilmeyen oranla veya grup rezervasyonları için varışınızdan önce tahsil edildiğini unutmayın.
                                                 </p>
                                                 <p>
-                                                    Please note that the credit card that is used for the booking needs to be present at check-in.
-                                                    When this credit card is not available please bring a photocopy of the credit card with
-                                                    authorization of the owner.
+                                                    Lütfen rezervasyon için kullanılan kredi kartının girişte bulunması gerektiğini unutmayın. 
+                                                    Bu kredi kartı mevcut değilse lütfen sahibinin yetkilendirmesiyle birlikte kredi kartının fotokopisini getirin.
                                                 </p>
                                             </div>
                                         </div>
@@ -573,9 +558,9 @@
 
             <div class="section-header">
                 <div class="container">
-                    <h2 class="title">Latest news <a href="blog-category.html" class="btn btn-sm btn-clean-dark">Explore more</a></h2>
+                    <h2 class="title">Son Haberler <a href="blog-category.html" class="btn btn-sm btn-clean-dark">Explore more</a></h2>
                     <p>
-                        Events, place to go, tour info & more
+                        Etkinlikler, gidilecek yerler, tur bilgileri ve daha fazlası
                     </p>
                 </div>
             </div>
@@ -589,7 +574,7 @@
                         <a href="blog-item.html">
                             <article>
                                 <div class="image">
-                                    <img src="assets/images/activity-3.jpg" alt="" />
+                                    <img src="/static/src/images/news1.jpg" alt="" />
                                 </div>
                                 <div class="text">
                                     <div class="time">
@@ -598,7 +583,7 @@
                                         <span>2014</span>
                                     </div>
                                     <h2 class="h5 title">
-                                        What to do when holidays go wrong
+                                        Tatiller ters gittiğinde ne yapmalı
                                     </h2>
                                 </div>
                             </article>
@@ -611,7 +596,7 @@
                         <a href="blog-item.html">
                             <article>
                                 <div class="image">
-                                    <img src="assets/images/activity-4.jpg" alt="" />
+                                    <img src="/static/src/images/vaccinations.jpg" alt="" />
                                 </div>
                                 <div class="text">
                                     <div class="time">
@@ -620,7 +605,7 @@
                                         <span>2014</span>
                                     </div>
                                     <h2 class="h5 title">
-                                        Everything you need to know about vaccinations
+                                        Aşılar hakkında bilmeniz gereken her şey
                                     </h2>
                                 </div>
                             </article>
@@ -633,7 +618,7 @@
                         <a href="blog-item.html">
                             <article>
                                 <div class="image">
-                                    <img src="assets/images/activity-5.jpg" alt="" />
+                                    <img src="/static/src/images/airport.jpg" alt="" />
                                 </div>
                                 <div class="text">
                                     <div class="time">
@@ -642,7 +627,7 @@
                                         <span>2014</span>
                                     </div>
                                     <h2 class="h5 title">
-                                        Six simple ways to save money on airport car parking
+                                        Havaalanı otoparkında para tasarrufu yapmanın altı basit yolu
                                     </h2>
                                 </div>
                             </article>
@@ -661,10 +646,11 @@
 
             <div class="section-header">
                 <div class="container">
-                    <h2 class="title">Resort facilities <a href="facility.html" class="btn btn-sm btn-clean-dark">Explore more</a></h2>
-                    <p>
-                        With the best luxury spa, salon and fitness experiences
-                    </p>
+                    <h2 class="title">Tatil Köyü Tesisleri <a href="facility.html" class="btn btn-sm btn-clean-dark">Daha Fazla Keşfet</a></h2>
+                <p>
+                    En iyi lüks spa, kuaför ve fitness deneyimleri ile
+                </p>
+
                 </div>
             </div>
 
@@ -674,17 +660,17 @@
 
                 <!-- === stretcher item === -->
 
-                <li class="stretcher-item" style="background-image:url(assets/images/services-1.jpg);">
+                <li class="stretcher-item" style="background-image:url(/static/src/images/spa.jpg);">
                     <!--logo-item-->
                     <div class="stretcher-logo">
                         <div class="text">
-                            <span class="text-intro h4">Spa center</span>
+                            <span class="text-intro h4">Spa merkezi</span>
                         </div>
                     </div>
                     <!--main text-->
                     <figure>
-                        <h4>Spa center</h4>
-                        <figcaption>Unparalleled devotion to luxury</figcaption>
+                        <h4>Spa merkezi</h4>
+                        <figcaption>Lükse benzersiz bağlılık</figcaption>
                     </figure>
                     <!--anchor-->
                     <a href="facility.html">Anchor link</a>
@@ -692,25 +678,24 @@
 
                 <!-- === stretcher item === -->
 
-                <li class="stretcher-item" style="background-image:url(assets/images/services-2.jpg);">
+                <li class="stretcher-item" style="background-image:url(/static/src/images/gym.jpg);">
                     <!--logo-item-->
                     <div class="stretcher-logo">
                         <div class="text">
-                            <span class="text-intro h4">Gym</span>
+                            <span class="text-intro h4">Spor salonu</span>
                         </div>
                     </div>
                     <!--main text-->
                     <figure>
-                        <h4>Gym</h4>
-                        <figcaption>Care about results</figcaption>
+                        <h4>Spor salonu</h4>
+                        <figcaption>Sonuçlara önem verin</figcaption>
                     </figure>
                     <!--anchor-->
                     <a href="facility.html">Anchor link</a>
                 </li>
-
                 <!-- === stretcher item === -->
 
-                <li class="stretcher-item" style="background-image:url(assets/images/services-3.jpg);">
+                <li class="stretcher-item" style="background-image:url(/static/src/images/fitness.jpg);">
                     <!--logo-item-->
                     <div class="stretcher-logo">
                         <div class="text">
@@ -719,7 +704,7 @@
                     </div>
                     <figure>
                         <h4>Fitness</h4>
-                        <figcaption>Your daily activities</figcaption>
+                        <figcaption>Günlük aktiviteleriniz</figcaption>
                     </figure>
                     <!--anchor-->
                     <a href="facility.html">Anchor link</a>
@@ -727,19 +712,19 @@
 
                 <!-- === stretcher item === -->
 
-                <li class="stretcher-item" style="background-image:url(assets/images/services-4.jpg);">
+                <li class="stretcher-item" style="background-image:url(/static/src/images/beauty-centre.jpg);">
 
 
                     <!--logo-item-->
                     <div class="stretcher-logo">
                         <div class="text">
-                            <span class="text-intro h4">Beauty salon</span>
+                            <span class="text-intro h4">Güzellik Salonu</span>
                         </div>
                     </div>
                     <!--main text-->
                     <figure>
-                        <h4>Beauty salon</h4>
-                        <figcaption>Hair salons and spas</figcaption>
+                        <h4>Güzellik Salonu</h4>
+                        <figcaption>Kuaför salonları ve spa'lar</figcaption>
                     </figure>
                     <!--anchor-->
                     <a href="facility.html">Anchor link</a>
@@ -765,8 +750,8 @@
 
             <div class="section-header">
                 <div class="container">
-                    <h2 class="title">Near by <a href="#" class="btn btn-sm btn-clean-dark">View all</a></h2>
-                    <p>Here's a selection of ionic sites related to art, fashion and design.</p>
+                    <h2 class="title">Yakında <a href="#" class="btn btn-sm btn-clean-dark">Hepsini gör</a></h2>
+                    <p>Sanat, moda ve tasarıma ilişkin Ionic sitelere dair bir seçki.</p>
                 </div>
             </div>
 
@@ -777,10 +762,10 @@
 
                     <div class="col-xs-12 col-md-8">
                         <figure>
-                            <figcaption style="background-image:url(assets/images/activity-1.jpg)">
-                                <img src="assets/images/activity-1.jpg" alt="" />
+                            <figcaption style="background-image:url(/static/src/images/museums.jpg)">
+                                <img src="/static/src/images/museums.jpg" alt="" />
                             </figcaption>
-                            <a href="#" class="btn btn-clean" onclick="">Museums</a>
+                            <a href="#" class="btn btn-clean" onclick="">Müzeler</a>
                         </figure>
                     </div>
 
@@ -788,10 +773,10 @@
 
                     <div class="col-xs-6 col-md-4">
                         <figure>
-                            <figcaption style="background-image:url(assets/images/activity-2.jpg)">
-                                <img src="assets/images/activity-2.jpg" alt="" />
+                            <figcaption style="background-image:url(/static/src/images/nightlife.jpg)">
+                                <img src="/static/src/images/nightlife.jpg" alt="" />
                             </figcaption>
-                            <a href="#" class="btn btn-clean">Nightlife</a>
+                            <a href="#" class="btn btn-clean">Gece Hayatı</a>
                         </figure>
                     </div>
 
@@ -799,10 +784,10 @@
 
                     <div class="col-xs-6 col-md-4">
                         <figure>
-                            <figcaption style="background-image:url(assets/images/activity-3.jpg)">
-                                <img src="assets/images/activity-3.jpg" alt="" />
+                            <figcaption style="background-image:url(/static/src/images/fooddrink.jpg)">
+                                <img src="/static/src/images/fooddrink.jpg" alt="" />
                             </figcaption>
-                            <a href="#" class="btn btn-clean">Food & drink</a>
+                            <a href="#" class="btn btn-clean">Yiyecek içecek</a>
                         </figure>
                     </div>
 
@@ -810,10 +795,10 @@
 
                     <div class="col-xs-6 col-md-4">
                         <figure>
-                            <figcaption style="background-image:url(assets/images/activity-4.jpg)">
-                                <img src="assets/images/activity-4.jpg" alt="" />
+                            <figcaption style="background-image:url(/static/src/images/shopping.jpg)">
+                                <img src="/static/src/images/shopping.jpg" alt="" />
                             </figcaption>
-                            <a href="#" class="btn btn-clean">Shopping</a>
+                            <a href="#" class="btn btn-clean">Alışveriş</a>
                         </figure>
                     </div>
 
@@ -821,10 +806,10 @@
 
                     <div class="col-xs-6 col-md-4">
                         <figure>
-                            <figcaption style="background-image:url(assets/images/activity-5.jpg)">
-                                <img src="assets/images/activity-5.jpg" alt="" />
+                            <figcaption style="background-image:url(/static/src/images/city.jpg)">
+                                <img src="/static/src/images/city.jpg" alt="" />
                             </figcaption>
-                            <a href="#" class="btn btn-clean">The City</a>
+                            <a href="#" class="btn btn-clean">Şehir</a>
                         </figure>
                     </div>
 
@@ -838,13 +823,13 @@
         <section class="subscribe">
             <div class="container">
                 <div class="box">
-                    <h2 class="title">Subscribe</h2>
+                    <h2 class="title">Abone Ol</h2>
                     <div class="text">
-                        <p>& receive free premium gifts</p>
+                        <p>& Ücretsiz Premium Hediyeler Alın</p>
                     </div>
                     <div class="form-group">
-                        <input type="text" value="" placeholder="Subscribe" class="form-control" />
-                        <button class="btn btn-sm btn-main">Go</button>
+                        <input type="text" value="" placeholder="Abone Ol" class="form-control" />
+                        <button class="btn btn-sm btn-main">Git</button>
                     </div>
                 </div>
             </div>
@@ -859,11 +844,11 @@
                 <div class="footer-links">
                     <div class="row">
                         <div class="col-sm-6 footer-left">
-                            <a href="#">Sitemap</a> &nbsp; | &nbsp; <a href="#">Privacy policy</a> | &nbsp; <a href="#">Guest book</a>
+                            <a href="#">Site Haritası</a> &nbsp; | &nbsp; <a href="#">Gizlilik Politikası</a> | &nbsp; <a href="#">Misafir Defteri</a>
                         </div>
                         <div class="col-sm-6 footer-right">
-                            <a href="#">Gallery</a> &nbsp; | &nbsp; <a href="#">Reservations</a> | &nbsp; <a href="#">Help center</a>
-                        </div>
+                            <a href="#">Galeri</a> &nbsp; | &nbsp; <a href="#">Rezervasyonlar</a> | &nbsp; <a href="#">Yardım Merkezi</a>
+                        </div>                        
                     </div>
                 </div>
 
@@ -872,7 +857,7 @@
                 <div class="footer-social">
                     <div class="row">
                         <div class="col-sm-12 text-center hidden">
-                            <a href="" class="footer-logo"><img src="assets/images/logo.png" alt="Alternate Text" /></a>
+                            <a href="" class="footer-logo"><img src="/static/src/images/logo.png" alt="Alternate Text" /></a>
                         </div>
                         <div class="col-sm-12 icons">
                             <ul>
@@ -887,7 +872,7 @@
                             <small>Copyright &copy; 2017 &nbsp; | &nbsp; <a href="https://themeforest.net/item/colina-hotel-website-template/20977257">Buy Colina Template</a></small>
                         </div>
                         <div class="col-sm-12 text-center">
-                            <img src="assets/images/logo-footer.png" alt="" />
+                            <img src="/static/src/images/logo-footer.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -897,12 +882,12 @@
     </div> <!--/wrapper-->
 
     <!--JS files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/jquery.bootstrap.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/jquery.owl.carousel.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/static/src/js/jquery.min.js"></script>
+    <script src="/static/src/js/jquery-ui.js"></script>
+    <script src="/static/src/js/jquery.bootstrap.js"></script>
+    <script src="/static/src/js/jquery.magnific-popup.js"></script>
+    <script src="/static/src/js/jquery.owl.carousel.js"></script>
+    <script src="/static/src/js/main.js"></script>
 </body>
 
 </html>
