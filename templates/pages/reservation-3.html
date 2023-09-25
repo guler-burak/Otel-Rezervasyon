@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="utf-8">
@@ -19,15 +19,15 @@
     <title>Reservation - 3 | Colina - Hotel, Resort & Accommodation Website Template</title>
 
     <!--CSS styles-->
-    <link rel="stylesheet" media="all" href="css/bootstrap.css" />
-    <link rel="stylesheet" media="all" href="css/animate.css" />
-    <link rel="stylesheet" media="all" href="css/font-awesome.css" />
-    <link rel="stylesheet" media="all" href="css/linear-icons.css" />
-    <link rel="stylesheet" media="all" href="css/hotel-icons.css" />
-    <link rel="stylesheet" media="all" href="css/magnific-popup.css" />
-    <link rel="stylesheet" media="all" href="css/owl.carousel.css" />
-    <link rel="stylesheet" media="all" href="css/datepicker.css" />
-    <link rel="stylesheet" media="all" href="css/theme.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/bootstrap.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/animate.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/font-awesome.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/linear-icons.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/hotel-icons.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/magnific-popup.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/owl.carousel.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/datepicker.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/theme.css" />
 
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&amp;subset=latin-ext" rel="stylesheet">
@@ -96,8 +96,8 @@
 
                     <div class="logo animated fadeIn">
                         <a href="index.html">
-                            <img class="logo-desktop" src="assets/images/logo.png" alt="Alternate Text" />
-                            <img class="logo-mobile" src="assets/images/logo-mobile.png" alt="Alternate Text" />
+                            <img class="logo-desktop" src="/static/src/images/logo.png" alt="Alternate Text" />
+                            <img class="logo-mobile" src="/static/src/images/logo-mobile.png" alt="Alternate Text" />
                         </a>
                     </div>
 
@@ -171,7 +171,7 @@
 
             <!-- ===  Page header === -->
 
-            <div class="page-header" style="background-image:url(assets/images/header-1.jpg)">
+            <div class="page-header" style="background-image:url(/static/src/images/header-1.jpg)">
 
                 <div class="container">
                     <h2 class="title">Reservation completed</h2>
@@ -397,19 +397,19 @@
 
                                 <div class="cart-block cart-block-item clearfix">
                                     <div class="image">
-                                        <a href="room-overview.html"><img src="assets/images/room-4.jpg" alt="" /></a>
+                                        <a href="room-overview.html"><img src="{{ room_image_url }}" alt="{{ room_name }}" /></a>
                                     </div>
                                     <div class="title">
-                                        <div class="h2"><a href="room-overview.html">Luxury appartment</a></div>
-                                        <div>
-                                            <strong>Arrival date</strong> <a href="#">(September 22, 2017)</a>
-                                        </div>
-                                        <div>
-                                            <strong>Guests</strong> 2 Adults, 1 Child
-                                        </div>
-                                        <div>
-                                            <strong>Nights</strong> 7
-                                        </div>
+                                        <div class="h2"><a href="room-overview.html">{{ room_name }}</a></div>
+                                        <p>
+                                            <strong>Arrival date</strong> <br /> <a href="#">(September 22, 2017)</a>
+                                        </p>
+                                        <p>
+                                            <strong>Guests</strong> <br />  2 Adults, 1 Child
+                                        </p>
+                                        <p>
+                                            <strong>Nights</strong> <br /> 7
+                                        </p>
                                     </div>
                                     <div class="price">
                                         <span class="final h3">$ 1.998</span>
@@ -518,7 +518,7 @@
                 <div class="footer-social">
                     <div class="row">
                         <div class="col-sm-12 text-center hidden">
-                            <a href="" class="footer-logo"><img src="assets/images/logo.png" alt="Alternate Text" /></a>
+                            <a href="" class="footer-logo"><img src="/static/src/images/logo.png" alt="Alternate Text" /></a>
                         </div>
                         <div class="col-sm-12 icons">
                             <ul>
@@ -533,7 +533,7 @@
                             <small>Copyright &copy; 2017 &nbsp; | &nbsp; <a href="https://themeforest.net/item/colina-hotel-website-template/20977257">Buy Colina Template</a></small>
                         </div>
                         <div class="col-sm-12 text-center">
-                            <img src="assets/images/logo-footer.png" alt="" />
+                            <img src="/static/src/images/logo-footer.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -543,12 +543,12 @@
     </div> <!--/wrapper-->
 
     <!--JS files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/jquery.bootstrap.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/jquery.owl.carousel.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/static/src/js/jquery.min.js"></script>
+    <script src="/static/src/js/jquery-ui.js"></script>
+    <script src="/static/src/js/jquery.bootstrap.js"></script>
+    <script src="/static/src/js/jquery.magnific-popup.js"></script>
+    <script src="/static/src/js/jquery.owl.carousel.js"></script>
+    <script src="/static/src/js/main.js"></script>
 </body>
 
 </html>

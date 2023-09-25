@@ -187,12 +187,9 @@
                     <div class="container">
                         <div class="owl-slider owl-theme owl-slider-gallery">
                             {% for room_image_url in room_image_urls %}
-
                             <!-- === slide item === -->
-
-                            <div class="item" style="background-image: url('{{ room_image_url }}')">
-                            </div>
-                            {% endfor %}
+                            <div class="item" style="background-image: url('{{ room_image_url }}')"></div>
+                        {% endfor %}
 
                         </div> <!--/owl-slider-->
 
