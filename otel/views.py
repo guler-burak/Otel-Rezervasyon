@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
+
 
 def index(request):
     return render(request, 'pages/index-2.html')
@@ -37,3 +39,29 @@ def room_overview(request, room_type):
         'room_type': room_type,
     }
     return render(request, 'pages/room-overview.html', context)
+
+
+
+
+def room_reservation(request, room_type, room_id):
+    if room_type == 'single':
+        room_name = 'Tek Oda'
+        room_image_url = '/static/src/images/single1.jpg'
+    elif room_type == 'classic':
+        room_name = 'Klasik Oda'
+        room_image_url = '/static/src/images/classic1.jpg' 
+    elif room_type == 'superior':
+        room_name = 'Superior Oda'
+        room_image_url = '/static/src/images/superior3.jpg'
+    elif room_type == 'family-suite':
+        room_name = 'Family Suite'
+        room_image_url = '/static/src/images/family1.jpg'
+    else:
+        room_name = 'Bilinmeyen Oda'
+        room_image_url = '/static/src/images/default-room.jpg'
+
+    context = {
+        'room_name': room_name,
+        'room_image_url': room_image_url,
+    }
+    return render(request, 'pages/reservation-1.html', context)

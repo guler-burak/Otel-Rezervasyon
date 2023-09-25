@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="utf-8">
@@ -16,18 +16,18 @@
     <link rel="icon" href="favicon.ico">
 
     <!--Title-->
-    <title>Reservation | Colina - Hotel, Resort & Accommodation Website Template</title>
+    <title>Rezervasyon | Colina -  Otel, Tatil Köyü ve Konaklama</title>
 
     <!--CSS styles-->
-    <link rel="stylesheet" media="all" href="css/bootstrap.css" />
-    <link rel="stylesheet" media="all" href="css/animate.css" />
-    <link rel="stylesheet" media="all" href="css/font-awesome.css" />
-    <link rel="stylesheet" media="all" href="css/linear-icons.css" />
-    <link rel="stylesheet" media="all" href="css/hotel-icons.css" />
-    <link rel="stylesheet" media="all" href="css/magnific-popup.css" />
-    <link rel="stylesheet" media="all" href="css/owl.carousel.css" />
-    <link rel="stylesheet" media="all" href="css/datepicker.css" />
-    <link rel="stylesheet" media="all" href="css/theme.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/bootstrap.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/animate.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/font-awesome.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/linear-icons.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/hotel-icons.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/magnific-popup.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/owl.carousel.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/datepicker.css" />
+    <link rel="stylesheet" media="all" href="/static/src/css/theme.css" />
 
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&amp;subset=latin-ext" rel="stylesheet">
@@ -75,11 +75,11 @@
                     <div class="navigation-top-right">
                         <a class="box" href="#">
                             <i class="icon icon-star"></i> 
-                            Special offers
+                            Özel Teklifler
                         </a>
                         <a class="box" href="reservation-1.html">
                             <i class="icon icon-tag"></i> 
-                            Reservations
+                            Rezervasyonlar
                         </a>
                         <a class="box" href="#">
                             <i class="icon icon-phone-handset"></i> 
@@ -96,8 +96,8 @@
 
                     <div class="logo animated fadeIn">
                         <a href="index.html">
-                            <img class="logo-desktop" src="assets/images/logo.png" alt="Alternate Text" />
-                            <img class="logo-mobile" src="assets/images/logo-mobile.png" alt="Alternate Text" />
+                            <img class="logo-desktop" src="/static/src/images/logo.png" alt="Alternate Text" />
+                            <img class="logo-mobile" src="/static/src/images/logo-mobile.png" alt="Alternate Text" />
                         </a>
                     </div>
 
@@ -113,29 +113,29 @@
 
                         <ul class="navigation-left">
                             <li>
-                                <a href="index.html">Home <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="{% url 'index' %}">Anasayfa <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="index.html">Home - Booking intro</a></li>
-                                    <li><a href="index-2.html">Home - Booking box</a></li>
-                                    <li><a href="index-3.html">Home - Rooms intro</a></li>
+                                    <li><a href="index.html">Ana Sayfa - Rezervasyon tanıtımı</a></li>
+                                    <li><a href="index-2.html">Ana Sayfa - Rezervasyon kutusu</a></li>
+                                    <li><a href="index-3.html">Ana Sayfa - Odaların tanıtımı</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Pages <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="#">Sayfalar <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="rooms-category.html">Rooms category</a></li>
-                                    <li><a href="room-overview.html">Room overview</a></li>
-                                    <li><a href="404.html">404 Not found</a></li>
-                                    <li><a href="shortcodes.html">Shortcodes</a></li>
+                                    <li><a href="about.html">Hakkımızda</a></li>
+                                    <li><a href="rooms-category.html">Oda Kategorileri</a></li>
+                                    <li><a href="room-overview.html">Oda İncelemesi</a></li>
+                                    <!-- <li><a href="404.html">404 Not found</a></li>
+                                    <li><a href="shortcodes.html">Shortcodes</a></li> -->
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Booking <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="#">Rezervasyon <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="reservation-1.html">Booking step 1</a></li>
-                                    <li><a href="reservation-2.html">Booking step 2</a></li>
-                                    <li><a href="reservation-3.html">Booking step 3</a></li>
+                                    <li><a href="reservation-1.html">Rezervasyon adımı 1</a></li>
+                                    <li><a href="reservation-2.html">Rezervasyon adımı 2</a></li>
+                                    <li><a href="reservation-3.html">Rezervasyon adımı 3</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -144,17 +144,17 @@
 
                         <ul class="navigation-right">
                             <li>
-                                <a href="facility.html">Facilities</a>
+                                <a href="facility.html">Tesisler</a>
                             </li>
                             <li>
                                 <a href="#">Blog <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="blog-category.html">Blog category</a></li>
-                                    <li><a href="blog-item.html">Blog item</a></li>
+                                    <li><a href="blog-category.html">Blog Kategorisi</a></li>
+                                    <li><a href="blog-item.html">Blog Gönderisi</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="contact.html">İletişim</a>
                             </li>
                         </ul>
 
@@ -171,10 +171,10 @@
 
             <!-- ===  Page header === -->
 
-            <div class="page-header" style="background-image:url(assets/images/header-1.jpg)">
+            <div class="page-header" style="background-image:url(/static/src/images/header-1.jpg)">
                 <div class="container">
-                    <h2 class="title">Make a reservation</h2>
-                    <p>Proceed to booking step 2</p>
+                    <h2 class="title">Rezervasyon yap</h2>
+                    <p>Rezervasyon adım 2'ye devam et</p>
                 </div>
             </div>
 
@@ -214,10 +214,10 @@
 
                             <div class="cart-block cart-block-header clearfix">
                                 <div>
-                                    <span>Room type</span>
+                                    <span>Oda tipi</span>
                                 </div>
                                 <div class="text-right">
-                                    <span>Price</span>
+                                    <span>Fiyat</span>
                                 </div>
                             </div>
 
@@ -227,10 +227,10 @@
 
                                 <div class="cart-block cart-block-item clearfix">
                                     <div class="image">
-                                        <a href="room-overview.html"><img src="assets/images/room-4.jpg" alt="" /></a>
+                                        <a href="room-overview.html"><img src="{{ room_image_url }}" alt="{{ room_name }}" /></a>
                                     </div>
                                     <div class="title">
-                                        <div class="h2"><a href="room-overview.html">Luxury appartment</a></div>
+                                        <div class="h2"><a href="room-overview.html">{{ room_name }}</a></div>
                                         <p>
                                             <strong>Arrival date</strong> <br /> <a href="#">(September 22, 2017)</a>
                                         </p>
@@ -299,6 +299,7 @@
                                     </div>
                                     <div>
                                         <a href="reservation-2.html" class="btn btn-main">Reservation <span class="icon icon-chevron-right"></span></a>
+
                                     </div>
                                 </div>
                             </div>
@@ -352,7 +353,7 @@
                 <div class="footer-social">
                     <div class="row">
                         <div class="col-sm-12 text-center hidden">
-                            <a href="" class="footer-logo"><img src="assets/images/logo.png" alt="Alternate Text" /></a>
+                            <a href="" class="footer-logo"><img src="/static/src/images/logo.png" alt="Alternate Text" /></a>
                         </div>
                         <div class="col-sm-12 icons">
                             <ul>
@@ -367,7 +368,7 @@
                             <small>Copyright &copy; 2017 &nbsp; | &nbsp; <a href="https://themeforest.net/item/colina-hotel-website-template/20977257">Buy Colina Template</a></small>
                         </div>
                         <div class="col-sm-12 text-center">
-                            <img src="assets/images/logo-footer.png" alt="" />
+                            <img src="/static/src/images/logo-footer.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -377,12 +378,12 @@
     </div> <!--/wrapper-->
 
     <!--JS files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/jquery.bootstrap.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/jquery.owl.carousel.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/static/src/js/jquery.min.js"></script>
+    <script src="/static/src/js/jquery-ui.js"></script>
+    <script src="/static/src/js/jquery.bootstrap.js"></script>
+    <script src="/static/src/js/jquery.magnific-popup.js"></script>
+    <script src="/static/src/js/jquery.owl.carousel.js"></script>
+    <script src="/static/src/js/main.js"></script>
 </body>
 
 </html>
