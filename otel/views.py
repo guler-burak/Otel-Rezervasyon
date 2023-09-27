@@ -28,6 +28,15 @@ room_info = {
 def index(request):
     return render(request, 'pages/index-2.html')
 
+def about(request):
+    return render(request, 'pages/about.html')
+
+def facility(request):
+    return render(request, 'pages/facility.html')
+
+def contact(request):
+    return render(request, 'pages/contact.html')
+
 def get_room_info(room_type):
     return room_info.get(room_type, room_info['unknown'])
 
