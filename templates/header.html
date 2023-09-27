@@ -15,9 +15,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-
     <!--Title-->
-    <title>Anasayfa - Otel, Tatil Köyü ve Konaklama</title>
+    <!-- <title> {% block title %} Otel, Tatil Köyü ve Konaklama {% endblock %}</title> -->
+
 
     <!--CSS styles-->
     <link rel="stylesheet" media="all" href="/static/src/css/bootstrap.css" />
@@ -115,7 +115,7 @@
                         <ul class="navigation-left">
                             <li>
                                 <li>
-                                    <a href="{% url 'index' %}">Anasayfa </i></span></a>
+                                    <a href="{% url 'index' %}">Anasayfa</i></span></a>
                                     <!-- <ul>
                                     <li><a href="{% url 'index' %}">Anasayfa - Rezervasyon tanıtımı</a></li>
                                     <li><a href="index-2.html">Ana Sayfa - Rezervasyon kutusu</a></li>
@@ -125,7 +125,7 @@
                             <li>
                                 <a href="#">Sayfalar <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="about.html">Hakkımızda</a></li>
+                                    <li><a href="{% url 'about' %}">Hakkımızda</a></li>
                                     <li><a href="rooms-category.html">Oda Kategorileri</a></li>
                                     <li><a href="room-overview.html">Oda İncelemesi</a></li>
                                     <!-- <li><a href="404.html">404 Not found</a></li>
@@ -146,7 +146,7 @@
 
                         <ul class="navigation-right">
                             <li>
-                                <a href="facility.html">Tesisler</a>
+                                <a href="{% url 'facility' %}">Tesisler</a>
                             </li>
                             <li>
                                 <a href="#">Blog <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
@@ -156,7 +156,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="contact.html">İletişim</a>
+                                <a href="{% url 'contact' %}">İletişim</a>
                             </li>
                         </ul>
 
