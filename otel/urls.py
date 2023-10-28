@@ -1,14 +1,21 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<str:room_type>-room/', views.room_overview, name='room-overview'),
-    path('<str:room_type>-room/reservation-<int:room_id>/', views.room_reservation, name='room-reservation'),
-    path('<str:room_type>-room/reservation-<int:room_id>/reservation-2/', views.reservation_step_2, name='reservation-step-2'),
-    path('<str:room_type>-room/reservation-<int:room_id>/reservation-2/reservation-3/', views.reservation_step_3, name='reservation-step-3'), 
-    path('about/', views.about, name='about'),
-    path('facility/', views.facility, name='facility'),
-    path('contact/', views.contact, name='contact'),
-
+    path('hakkında/', views.about, name='about'),
+    path('iletisim/', views.contact, name='contact'),
+    path('tesisler/', views.facility, name='facility'),
+    path('room-category', views.category, name='category'),
+    path('giris/', views.login, name='login'),
+    path('<slug:room_slug>/', views.room_overview, name='room-overview'),
+    path('reservation/<slug:room_slug>/', views.reservation, name='reservation'),
+    path('reservation/<slug:room_slug>/step-2/', views.reservation_step_2, name='reservation-step-2'),
+    path('reservation/<slug:room_slug>/step-3/', views.reservation_step_3, name='reservation-step-3'),
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
