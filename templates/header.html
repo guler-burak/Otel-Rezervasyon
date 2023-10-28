@@ -60,31 +60,27 @@
                     <!-- navigation-top-left -->
 
                     <div class="navigation-top-left">
-                        <a class="box" href="#">
+                        <a class="box" href="https://facebook.com"target="_blank">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a class="box" href="#">
+                        <a class="box" href="https://twitter.com"target="_blank">
                             <i class="fa fa-twitter"></i>
                         </a>
-                        <a class="box" href="#">
+                        <a class="box" href="https://youtube.com"target="_blank">
                             <i class="fa fa-youtube"></i>
                         </a>
                     </div>
 
                     <!-- navigation-top-right -->
-
+                    
                     <div class="navigation-top-right">
-                        <a class="box" href="#">
+                        <a class="box" href="{% url 'login' %}">
                             <i class="icon icon-star"></i> 
                             Özel teklifler
                         </a>
-                        <a class="box" href="reservation-1.html">
+                        <a class="box" href="{% url 'login' %}">
                             <i class="icon icon-tag"></i> 
                             Rezervasyonlar
-                        </a>
-                        <a class="box" href="#">
-                            <i class="icon icon-phone-handset"></i> 
-                            (01) 252-3333
                         </a>
                     </div>
                 </nav>
@@ -96,9 +92,8 @@
                     <!-- logo -->
 
                     <div class="logo animated fadeIn">
-                        <a href="index.html">
+                        <a href="{% url 'index' %}">
                             <img class="logo-desktop" src="/static/src/images/logo.png" alt="Alternate Text" />
-                            <img class="logo-mobile" src="/static/src/images/logo-mobile.png" alt="Alternate Text" />
                         </a>
                     </div>
 
@@ -123,21 +118,19 @@
                                 </ul> -->
                             </li>
                             <li>
-                                <a href="#">Sayfalar <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
-                                <ul>
-                                    <li><a href="{% url 'about' %}">Hakkımızda</a></li>
-                                    <li><a href="rooms-category.html">Oda Kategorileri</a></li>
-                                    <li><a href="room-overview.html">Oda İncelemesi</a></li>
+                                <a href="{% url 'facility' %}">Tesisler</a>
+                                
+                                    <!-- <li><a href="{% url 'about' %}">Hakkımızda</a></li>
+                                    <li><a href="{% url 'category' %}">Oda Kategorileri</a></li>
+                                    <li><a href="room-overview.html">Oda İncelemesi</a></li> -->
                                     <!-- <li><a href="404.html">404 Not found</a></li>
                                     <li><a href="shortcodes.html">Shortcodes</a></li> -->
-                                </ul>
+                                
                             </li>
                             <li>
                                 <a href="#">Rezervasyon <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
                                     <li><a href="reservation-1.html">Rezervasyon adımı 1</a></li>
-                                    <li><a href="reservation-2.html">Rezervasyon adımı 2</a></li>
-                                    <li><a href="reservation-3.html">Rezervasyon adımı 3</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -146,17 +139,15 @@
 
                         <ul class="navigation-right">
                             <li>
-                                <a href="{% url 'facility' %}">Tesisler</a>
+                                <a href="{% url 'about' %}">Hakkımızda</i></span></a>
                             </li>
                             <li>
-                                <a href="#">Blog <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
-                                <ul>
-                                    <li><a href="blog-category.html">Blog Kategorisi</a></li>
-                                    <li><a href="blog-item.html">Blog Gönderisi</a></li>
-                                </ul>
-                            </li>
                             <li>
                                 <a href="{% url 'contact' %}">İletişim</a>
+                            </li>
+                            <li>
+                            <li>
+                                <a href="{% url 'login' %}">Giriş yap</a>
                             </li>
                         </ul>
 
