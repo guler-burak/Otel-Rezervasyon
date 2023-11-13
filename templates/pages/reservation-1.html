@@ -66,11 +66,11 @@
                                 <div class="cart-block cart-block-item clearfix">
                                     <div class="image">
                                         <a href="{% url 'room-overview' room_slug=room.slug %}">
-                                            <img src="{{ room.image_home.url }}" alt="{{ room.room_name }}" />
+                                            <img src="{{ room.image_home.url }}" alt="{{ room.name }}" />
                                         </a>
                                         </div>
                                         <div class="title">
-                                            <div class="h2"><a href="{% url 'room-overview' room_slug=room.slug %}">{{ room.get_room_type_display }}</a></div>
+                                            <div class="h2"><a href="{% url 'room-overview' room_slug=room.slug %}">{{ room.description }}</a></div>
                                         </div>
                                         <p>
                                             <strong>Arrival date</strong> <br /> <a href="#">(September 22, 2017)</a>
@@ -83,9 +83,7 @@
                                         </p>
                                     </div>
                                     <div class="price">
-                                        <span class="final h3">$ 1.998</span>
-                                        <span class="discount">$ 2.666</span>
-                                        
+                                        <span class="final h3">₺ {{ room.price }}</span>
                                     </div>
                                     <!--delete-this-item-->
                                     <span class="icon icon-cross icon-delete"></span>
@@ -100,22 +98,20 @@
                                         <strong>Discount 15%</strong>
                                     </div>
                                     <div>
-                                        <span>$ 159,00</span>
+                                        <span>$  {{ room.price }}</span>
                                     </div>
                                 </div>
-                            
                                 <div class="cart-block cart-block-footer clearfix">
                                     <div>
                                         <strong>TAX</strong>
                                     </div>
                                     <div>
-                                        <span>$ 59,00</span>
+                                        <span>$  {{ room.price }}</span>
                                     </div>
                                 </div>
                             </div>
                             
                             <!--cart final price -->
-                            
                             <div class="clearfix">
                                 <div class="cart-block cart-block-footer cart-block-footer-price clearfix">
                                     <div>
@@ -126,10 +122,11 @@
                                         </span>
                                     </div>
                                     <div>
-                                        <div class="h2 title">$ 1259,00</div>
+                                        <div class="h2 title">$  {{ room.price }}</div>
                                     </div>
                                 </div>
                             </div>
+                            
                             
                             <!-- ========================  Cart navigation ======================== -->
                             

@@ -220,11 +220,11 @@
                     <div class="item">
                         <article>
                             <div class="image">
-                                <img src="{{ room.image_home.url }}" alt="{{ room.room_type }} Room" >
+                                <img src="{{ room.image_home.url }}" alt="{{ room.name }} Room" >
                             </div>
                             <div class="details">
                                 <div class="text">
-                                    <h3 class="title"><a href="{% url 'room-overview' room_slug=room.slug %}">{{ room.get_room_type_display }}</a></h3>
+                                    <h3 class="title"><a href="{% url 'room-overview' room_slug=room.slug %}">{{ room.description }}</a></h3>
                                     <p>{{ room.description }}</p>
                                 </div>
                                 <div class="book">

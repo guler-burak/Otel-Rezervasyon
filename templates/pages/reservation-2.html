@@ -258,7 +258,7 @@
 
                             <div class="cart-block cart-block-header clearfix">
                                 <div>
-                                    <span>{{ room_type }}</span>
+                                    <span>{{ room.name }}</span>
                                 </div>
                                 <div class="text-right">
                                     <span>Price</span>
@@ -270,63 +270,63 @@
                                 <div class="cart-block cart-block-item clearfix">
                                     <div class="image">
                                         <a href="{% url 'room-overview' room_slug=room.slug %}">
-                                            <img src="{{ room.image_home.url }}" alt="{{ room.room_name }}" />
+                                            <img src="{{ room.image_home.url }}" alt="{{ room.name }}" />
                                         </a>
-                                    </div>
-                                    <div class="title">
-                                        <div class="h2"><a href="{% url 'room-overview' room_slug=room.slug %}">{{ room.room_name }}</a></div>
-                                    </div>
-                                        <div>
-                                            <strong>Arrival date</strong> <a href="#">(September 22, 2017)</a>
                                         </div>
-                                        <div>
-                                            <strong>Guests</strong> 2 Adults, 1 Child
+                                        <div class="title">
+                                            <div class="h2"><a href="{% url 'room-overview' room_slug=room.slug %}">{{ room.description }}</a></div>
                                         </div>
-                                        <div>
-                                            <strong>Nights</strong> 7
-                                        </div>
+                                        <p>
+                                            <strong>Arrival date</strong> <br /> <a href="#">(September 22, 2017)</a>
+                                        </p>
+                                        <p>
+                                            <strong>Guests</strong> <br /> 2 Adults, 1 Child
+                                        </p>
+                                        <p>
+                                            <strong>Nights</strong> <br /> 7
+                                        </p>
                                     </div>
                                     <div class="price">
-                                        <span class="final h3">$ 1.998</span>
-                                        <span class="discount">$ 2.666</span>
+                                        <span class="final h3">₺ {{ room.price }}</span>
                                     </div>
                                     <!--delete-this-item-->
                                     <span class="icon icon-cross icon-delete"></span>
                                 </div>
                             </div>
                             
-
                             <!--cart prices -->
-
+                            
                             <div class="clearfix">
                                 <div class="cart-block cart-block-footer clearfix">
                                     <div>
                                         <strong>Discount 15%</strong>
                                     </div>
                                     <div>
-                                        <span>$ 159,00</span>
+                                        <span>$  {{ room.price }}</span>
                                     </div>
                                 </div>
-
                                 <div class="cart-block cart-block-footer clearfix">
                                     <div>
                                         <strong>TAX</strong>
                                     </div>
                                     <div>
-                                        <span>$ 59,00</span>
+                                        <span>$  {{ room.price }}</span>
                                     </div>
                                 </div>
                             </div>
-
+                            
                             <!--cart final price -->
-
                             <div class="clearfix">
                                 <div class="cart-block cart-block-footer cart-block-footer-price clearfix">
                                     <div>
-                                        Promo code included!
+                                        <span class="checkbox">
+                                            <input type="checkbox" id="couponCodeID">
+                                            <label for="couponCodeID">Promo code</label>
+                                            <input type="text" class="form-control form-coupon" value="" placeholder="Enter your coupon code" />
+                                        </span>
                                     </div>
                                     <div>
-                                        <div class="h2 title">$ 1259,00</div>
+                                        <div class="h2 title">$  {{ room.price }}</div>
                                     </div>
                                 </div>
                             </div>
