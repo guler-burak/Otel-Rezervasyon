@@ -4,8 +4,7 @@ from .models import Room
 
 def index(request):
     rooms = Room.objects.all()
-    context = {'rooms': rooms}
-    return render(request, 'pages/index-2.html', context)
+    return render(request, 'pages/index-2.html', {'rooms': rooms})
 
 def about(request):
     return render(request, 'pages/about.html')

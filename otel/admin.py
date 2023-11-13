@@ -1,11 +1,10 @@
 from django.contrib import admin
 from .models import Room
 
-
 class RoomAdmin(admin.ModelAdmin):
-    list_display = ['room_number','room_type','price']
+    search_fields = ["name"]
 
-    class Meta:
-        model = Room
+class ReservationAdmin(admin.ModelAdmin):
+    autocomplete_fields = ["room"]
 
-admin.site.register(Room,RoomAdmin)
+admin.site.register(Room, RoomAdmin)
