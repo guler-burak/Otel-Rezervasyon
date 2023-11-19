@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import login_view
 
 
 urlpatterns = [
@@ -10,7 +11,8 @@ urlpatterns = [
     path('iletisim/', views.contact, name='contact'),
     path('tesisler/', views.facility, name='facility'),
     path('room-category', views.category, name='category'),
-    path('giris/', views.login, name='login'),
+    path('register/', views.register, name='register'),
+    path('login/', login_view, name='login'),
     path('<slug:room_slug>/', views.room_overview, name='room-overview'),
     path('reservation/<slug:room_slug>/', views.reservation, name='reservation'),
     path('reservation/<slug:room_slug>/step-2/', views.reservation_step_2, name='reservation-step-2'),

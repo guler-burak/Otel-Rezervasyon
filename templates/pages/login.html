@@ -41,98 +41,32 @@
                                 <div class="login-wrapper">
 
                                     <div class="white-block">
-
-                                        <!--signin-->
-
-                                        <div class="login-block login-block-signin">
-
-                                            <div class="h4">Sign in <a href="javascript:void(0);" class="btn btn-main btn-xs btn-register pull-right">create an account</a></div>
-
-                                            <hr />
-
-                                            <div class="row">
-
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input type="text" value="" class="form-control" placeholder="User ID">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input type="password" value="" class="form-control" placeholder="Password">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xs-6">
-                                                    <span class="checkbox">
-                                                        <input type="checkbox" id="checkBoxId3">
-                                                        <label for="checkBoxId3">Remember me</label>
-                                                    </span>
-                                                </div>
-
-                                                <div class="col-xs-6 text-right">
-                                                    <a href="#" class="btn btn-main">Login</a>
-                                                </div>
+                                    <!--signin-->
+                                    <form method="post" action="{% url 'login' %}">
+                                        {% csrf_token %}
+                                    
+                                        <div class="form-group">
+                                            {{ login_form.username.label_tag }}
+                                            {{ login_form.username }}
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            {{ login_form.password.label_tag }}
+                                            {{ login_form.password }}
+                                        </div>
+                                    
+                                        {% if login_form.errors %}
+                                            <div class="error">
+                                                <strong>Geçersiz kullanıcı adı veya şifre.</strong> Lütfen tekrar deneyin.
                                             </div>
-                                        </div> <!--/signin-->
-                                        <!--signup-->
-                                        <div class="login-block login-block-signup">
-                                            <div class="h4">Şimdi Kaydol <a href="javascript:void(0);" class="btn btn-main btn-xs btn-login pull-right">Giriş Yap</a></div>
-                                            <hr />
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" value="" class="form-control" placeholder="Adınız: *" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" value="" class="form-control" placeholder="Soyadınız: *">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input type="text" value="" class="form-control" placeholder="Şirket Adı:">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <input type="text" value="" class="form-control" placeholder="Posta Kodu: *">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="form-group">
-                                                        <input type="text" value="" class="form-control" placeholder="Şehir: *">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" value="" class="form-control" placeholder="E-posta: *">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" value="" class="form-control" placeholder="Telefon: *">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <hr />
-                                                    <span class="checkbox">
-                                                        <input type="checkbox" id="checkBoxId1">
-                                                        <label for="checkBoxId1"> <a href="#">Şartlar</a>ı okudum ve kabul ettim ve iş koşullarımızı <a href="#">anladım</a></label>
-                                                    </span>
-                                                    <span class="checkbox">
-                                                        <input type="checkbox" id="checkBoxId2">
-                                                        <label for="checkBoxId2">Heyecan verici bültenlere ve harika ipuçlarına abone olun</label>
-                                                    </span>
-                                                    <hr />
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <a href="#" class="btn btn-main btn-block">Hesap Oluştur</a>
-                                                </div>
-                                            </div>
-                                        </div> <!--/signup-->
+                                        {% endif %}
+                                    
+                                        <button type="submit">Login</button>
+                                        
+                                    </form>
+                                    
+                                    </div> <!--/signin-->
+
                                     </div>
                                 </div> <!--/login-wrapper-->
                             </div> <!--/col-md-6-->

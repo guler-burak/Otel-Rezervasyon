@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Anasayfa - Otel, Tatil Köyü ve Konaklama{% endblock %}
+
+{% block content %}
+
+  <!-- ========================  Checkout ======================== -->
+
+  <section class="page">
+
+    <!-- ===  Page header === -->
+
+    <div class="page-header" style="background-image:url(/static/src/images/header-1.jpg)">
+        <div class="container">
+            <h2 class="title">Giriş yapın veya hesap oluşturun</h2>
+        </div>
+    </div>
+
+    <!-- ===  Checkout === -->
+
+    <div class="checkout">
+
+        <div class="container">
+
+            <div class="clearfix">
+
+                <!-- ========================  Note block ======================== -->
+
+                <div class="cart-wrapper">
+
+                    <div class="note-block">
+
+                        <div class="row">
+
+                            <!-- === left content === -->
+
+                            <div class="col-md-6">
+
+                                <!-- === login-wrapper === -->
+
+                                <div class="login-wrapper">
+
+                                    <div class="white-block">
+                                <!--signup-->
+                                <div class="login-block login-block-signup">
+                                    <div class="h4">Şimdi Kaydol <a href="{% url 'login' %}" class="btn btn-main btn-xs btn-login pull-right">Giriş Yap</a></div>
+                                    <hr />
+                                    <form method="post" action="{% url 'register' %}">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <button type="submit" onclick="showAlert()">Hesap Oluştur</button>
+                                    </form>
+                                    <!-- <script>
+                                        var successMessage = "{% if messages %}{% for message in messages %}{% if message.tags == 'success' %}{{ message }}{% endif %}{% endfor %}{% endif %}";
+                                        if (successMessage) {
+                                            alert(successMessage);
+                                        }
+                                       
+                                    </script> -->
+                                </div> <!--/signup-->
+                            </div>
+                        </div> <!--/login-wrapper-->
+                    </div> <!--/col-md-6-->
+                   
+</div> <!--/checkout-->
+
+</section>
+<!-- ========================  Subscribe ======================== -->
+
+<section class="subscribe">
+<div class="container">
+<div class="box">
+    <h2 class="title">Subscribe</h2>
+    <div class="text">
+        <p>& receive free premium gifts</p>
+    </div>
+    <div class="form-group">
+        <input type="text" value="" placeholder="Subscribe" class="form-control" />
+        <button class="btn btn-sm btn-main">Go</button>
+    </div>
+</div>
+</div>
+</section> 
+</div> <!--/wrapper-->
+
+<!--JS files-->
+<script src="/static/src/js/jquery.min.js"></script>
+<script src="/static/src/js/jquery-ui.js"></script>
+<script src="/static/src/js/jquery.bootstrap.js"></script>
+<script src="/static/src/js/jquery.magnific-popup.js"></script>
+<script src="/static/src/js/jquery.owl.carousel.js"></script>
+<script src="/static/src/js/main.js"></script>
+</body>
+
+</html>
+{% endblock %}

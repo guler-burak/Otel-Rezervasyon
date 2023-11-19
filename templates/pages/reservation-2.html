@@ -97,78 +97,32 @@
                                                         </div>
                                                     </div>
                                                 </div> <!--/signin-->
-                                                <!--signup-->
+                                               <!--signup-->
+                                        <div class="login-block login-block-signup">
+                                            <div class="h4">Şimdi Kaydol <a href="javascript:void(0);" class="btn btn-main btn-xs btn-login pull-right">Giriş Yap</a></div>
+                                            <hr />
+                                            <form method="post" action="{% url 'login' %}">
+                                                {% csrf_token %}
+                                            
+                                                {{ form.as_p }}
+                                            
+                                                <button type="submit" onclick="showAlert()">Hesap Oluştur</button>
+                                            </form>
+                                            
+                                            <script>
+                                                var successMessage = "{% if messages %}{% for message in messages %}{% if message.tags == 'success' %}{{ message }}{% endif %}{% endfor %}{% endif %}";
+                                    
+                                                if (successMessage) {
+                                                    alert(successMessage);
+                                                }
+                                                var errorMessage = "{% if messages %}{% for message in messages %}{% if message.tags == 'error' %}{{ message }}{% endif %}{% endfor %}{% endif %}";
 
-                                                <div class="login-block login-block-signup">
-
-                                                    <div class="h4">Register now <a href="javascript:void(0);" class="btn btn-main btn-xs btn-login pull-right">Log in</a></div>
-
-                                                    <hr />
-
-                                                    <div class="row">
-
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input type="text" value="" class="form-control" placeholder="First name: *">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input type="text" value="" class="form-control" placeholder="Last name: *">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-12">
-
-                                                            <div class="form-group">
-                                                                <input type="text" value="" class="form-control" placeholder="Company name:">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <input type="text" value="" class="form-control" placeholder="Zip code: *">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-8">
-                                                            <div class="form-group">
-                                                                <input type="text" value="" class="form-control" placeholder="City: *">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input type="text" value="" class="form-control" placeholder="Email: *">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input type="text" value="" class="form-control" placeholder="Phone: *">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-12">
-                                                            <hr />
-                                                            <span class="checkbox">
-                                                                <input type="checkbox" id="checkBoxId1">
-                                                                <label for="checkBoxId1">I have read and accepted the <a href="#">terms</a>, as well as read and understood our terms of <a href="#">business contidions</a></label>
-                                                            </span>
-                                                            <span class="checkbox">
-                                                                <input type="checkbox" id="checkBoxId2">
-                                                                <label for="checkBoxId2">Subscribe to exciting newsletters and great tips</label>
-                                                            </span>
-                                                            <hr />
-                                                        </div>
-
-                                                        <div class="col-md-12">
-                                                            <a href="#" class="btn btn-main btn-block">Create account</a>
-                                                        </div>
-
-                                                    </div>
-                                                </div> <!--/signup-->
+                                                if (errorMessage) {
+                                                    alert(errorMessage);
+                                                }
+                                            </script>
+                                            
+                                        </div> <!--/signup-->
                                             </div>
                                         </div> <!--/login-wrapper-->
                                     </div> <!--/col-md-6-->
