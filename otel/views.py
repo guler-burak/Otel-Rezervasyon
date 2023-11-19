@@ -1,15 +1,13 @@
-from django.shortcuts import render,get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login
 from django.conf import settings
-from .models import Room
-from . forms import  RegisterForm
+from .models import Room, Contact
+from .forms import ContactForm, RegisterForm, LoginForm
 from django.contrib import messages
-from .forms import LoginForm
-
 
 def index(request):
     rooms = Room.objects.all()
-    return render(request, 'pages/index-2.html', {'rooms': rooms})
+    return render(request, 'pages/index.html', {'rooms': rooms})
 
 def about(request):
     return render(request, 'pages/about.html')
@@ -20,7 +18,7 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Hesap başarıyla oluşturuldu. Şimdi giriş yapabilirsiniz.')
-            return redirect('register')
+            return redirect('index')
         else:
             messages.error(request, 'Lütfen formu doğru bir şekilde doldurun.') 
     else:
@@ -48,8 +46,25 @@ def category(request):
 def facility(request):
     return render(request, 'pages/facility.html')
 
+
 def contact(request):
-    return render(request, 'pages/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Her zaman yeni bir kayıt oluştur
+            Contact.objects.create(
+                name=form.cleaned_data['name'],
+                surname=form.cleaned_data['surname'],
+                email=form.cleaned_data['email'],
+                subject=form.cleaned_data['subject'],
+                message=form.cleaned_data['message']
+            )
+            messages.success(request, 'Mesajınız başarıyla gönderildi.')
+            return redirect('index')  # Başarı sayfasına yönlendirme
+    else:
+        form = ContactForm()
+
+    return render(request, 'pages/contact.html', {'form': form})
 
 def get_room_info(room_type):
     return settings.ROOM_INFO.get(room_type, settings.ROOM_INFO['unknown'])

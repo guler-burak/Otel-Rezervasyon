@@ -20,3 +20,10 @@ class RegisterForm(UserCreationForm):
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Kullanıcı Adı'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Şifre'}))
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Adınız'}))
+    surname = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Soyadınız'}))
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'E-posta adresiniz'}))
+    subject = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Konu'}))
+    message = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Mesajınız', 'rows': 10}))

@@ -24,7 +24,7 @@
 
                     <!-- === Google map === -->
 
-                     <div class="map" id="map"></div>
+                     <!-- <div class="map" id="map"></div> -->
 
                     <div class="row">
 
@@ -49,34 +49,34 @@
                                                 <a class="btn btn-clean open-form" data-text-open="Form aracılığıyla bize ulaşın" data-text-close="Formu kapat">Form aracılığıyla bize ulaşın</a>
 
                                                 <div class="contact-form clearfix">
-                                                    <form action="#" method="post">
+                                                    <form action="" method="post">
+                                                        {% csrf_token %}
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <input type="text" value="" class="form-control" placeholder="Adınız" required="required">
+                                                                    {{ form.name }}
                                                                 </div>
-                                                                </div>
-
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <input type="email" value="" class="form-control" placeholder="E-posta adresiniz" required="required">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <input type="text" value="" class="form-control" placeholder="Konu" required="required">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <textarea class="form-control" placeholder="Mesajınız" rows="10"></textarea>
-                                                                    </div>
-                                                                </div>
-
                                                             </div>
-
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    {{ form.surname }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    {{ form.email }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    {{ form.subject }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    {{ form.message }}
+                                                                </div>
+                                                            </div>
                                                             <div class="col-md-12 text-center">
                                                                 <input type="submit" class="btn btn-clean" value="Mesaj gönder" />
                                                             </div>
@@ -84,11 +84,9 @@
                                                     </form>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
-
                                 <!-- === Contact info === -->
 
                                 <div class="contact-info">
