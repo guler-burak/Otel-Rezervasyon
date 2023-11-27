@@ -231,7 +231,10 @@
                                             <div class="h2"><a href="{% url 'room-overview' room_slug=room.slug %}">{{ room.description }}</a></div>
                                         </div>
                                         <p>
-                                            <strong>Arrival date</strong> <br /> <a href="#">(September 22, 2017)</a>
+                                            <strong>Giriş</strong> <br /> <a href="#">({{ checkin_date|date:"F d, Y" }})</a>
+                                        </p>
+                                        <p>
+                                            <strong>Çıkış</strong> <br /> <a href="#">({{ checkout_date|date:"F d, Y" }})</a>
                                         </p>
                                         <p>
                                             <strong>Guests</strong> <br /> 2 Adults, 1 Child

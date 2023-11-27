@@ -3,6 +3,12 @@
 <html lang="tr">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'src/js/rez.js' %}"></script>
+
+
+    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -74,9 +80,14 @@
                     <!-- navigation-top-right -->
                     
                     <div class="navigation-top-right">
-                        <a class="box" href="{% url 'register' %}">
-                            <!-- <i class="icon icon-star"></i>  -->
-                        </a>
+                        <div id="user-info" style="color: white;">
+                            {% if request.user.is_authenticated %}
+                                Hoş geldiniz, {{ request.user.get_full_name }}!
+                                <a href="{% url 'logout' %}" style="color: white;"> <br>Çıkış Yap</a>
+                            {% else %}
+                                Henüz giriş yapmadınız. <a href="{% url 'login' %}" style="color: white;">Giriş Yap</a>
+                            {% endif %}
+                        </div>
                     </div>
                 </nav>
 
@@ -142,7 +153,7 @@
                             </li>
                             <li>
                             <li>
-                                <a href="{% url 'register' %}">Giriş yap</a>
+                                <a href="{% url 'register' %}">Kayıt ol</a>
                             </li>
                         </ul>
 

@@ -73,20 +73,22 @@
                                             <div class="h2"><a href="{% url 'room-overview' room_slug=room.slug %}">{{ room.description }}</a></div>
                                         </div>
                                         <p>
-                                            <strong>Arrival date</strong> <br /> <a href="#">(September 22, 2017)</a>
+                                            <strong>Giriş</strong> <br /> <a href="#">({{ checkin_date|date:"F d, Y" }})</a>
                                         </p>
                                         <p>
+                                            <strong>Çıkış</strong> <br /> <a href="#">({{ checkout_date|date:"F d, Y" }})</a>
+                                        </p>
+                                        
+                                        
+                                        <!-- <p>
                                             <strong>Guests</strong> <br /> 2 Adults, 1 Child
                                         </p>
                                         <p>
                                             <strong>Nights</strong> <br /> 7
-                                        </p>
+                                        </p> -->
                                     </div>
-                                    <div class="price">
-                                        <span class="final h3">₺ {{ room.price }}</span>
-                                    </div>
+                                   
                                     <!--delete-this-item-->
-                                    <span class="icon icon-cross icon-delete"></span>
                                 </div>
                             </div>
                             
@@ -122,7 +124,7 @@
                                         </span>
                                     </div>
                                     <div>
-                                        <div class="h2 title">$  {{ room.price }}</div>
+                                        <div class="h2 title">₺  {{ room.price }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -137,8 +139,6 @@
                                     </div>
                                     <div>
                                         <a href="{% url 'reservation-step-2' room_slug=room.slug %}" class="btn btn-main">Rezervasyon Yap</a>
-
-                                        
                                     </div>
                                     
                                 </div>

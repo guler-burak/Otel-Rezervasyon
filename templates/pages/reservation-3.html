@@ -66,63 +66,35 @@
                                             <hr />
 
                                             <div class="row">
-
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <strong>Name</strong> <br />
-                                                        <span>John Doe</span>
+                                                        <strong>İsim</strong><br />
+                                                        <span>{{ request.user.first_name }}</span>
                                                     </div>
                                                 </div>
-
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <strong>Soyisim</strong><br />
+                                                        <span>{{ request.user.last_name }}</span>
+                                                    </div>
+                                                </div>
+                                            
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <strong>Email</strong><br />
-                                                        <span>johndoe@company.com</span>
+                                                        <span>{{ request.user.email }}</span>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <strong>Phone</strong><br />
-                                                        <span>+122 523 352</span>
+                                                        <strong>Telefon</strong><br />
+                                                        <span>{{ request.user.customer.telefon }}</span>
                                                     </div>
                                                 </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <strong>Zip</strong><br />
-                                                        <span>94107</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <strong>City</strong><br />
-                                                        <span>San Francisco, California</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <strong>Address</strong><br />
-                                                        <span>795 Folsom Ave, Suite 600</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <strong>Company name</strong><br />
-                                                        <span>Your company name</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <strong>Company phone</strong><br />
-                                                        <span>+122 333 6665</span>
-                                                    </div>
-                                                </div>
-
+                                            
+                                                <!-- Diğer bilgileri ekleyebilirsiniz -->
                                             </div>
 
                                         </div> <!--/col-md-6-->
@@ -243,7 +215,10 @@
                                             <div class="h2"><a href="{% url 'room-overview' room_slug=room.slug %}">{{ room.description }}</a></div>
                                         </div>
                                         <p>
-                                            <strong>Arrival date</strong> <br /> <a href="#">(September 22, 2017)</a>
+                                            <strong>Giriş</strong> <br /> <a href="#">({{ checkin_date|date:"F d, Y" }})</a>
+                                        </p>
+                                        <p>
+                                            <strong>Çıkış</strong> <br /> <a href="#">({{ checkout_date|date:"F d, Y" }})</a>
                                         </p>
                                         <p>
                                             <strong>Guests</strong> <br /> 2 Adults, 1 Child
