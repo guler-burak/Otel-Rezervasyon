@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
-
+from .models import Customer
 
 class RegisterForm(UserCreationForm):
     ad = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ad'}))
@@ -15,7 +15,7 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['ad', 'soyad', 'username', 'email', 'telefon', 'password1', 'password2']
+        fields = ['ad', 'soyad', 'username', 'email', 'telefon', 'password1', 'password2'] 
         
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Kullanıcı Adı'}))
@@ -27,3 +27,12 @@ class ContactForm(forms.Form):
     email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'E-posta adresiniz'}))
     subject = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Konu'}))
     message = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Mesajınız', 'rows': 10}))
+
+class ReservationForm(forms.Form):
+    checkin_date = forms.DateField(widget=forms.TextInput(attrs={'type': 'date'}))
+    checkout_date = forms.DateField(widget=forms.TextInput(attrs={'type': 'date'}))
+
+class CustomerForm(forms.ModelForm):
+    class Meta:
+        model = Customer
+        fields = ['ad', 'soyad', 'telefon']

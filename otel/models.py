@@ -1,5 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
+from django.contrib.auth.models import User
 
 class Room(models.Model):
     name = models.CharField(max_length=255, verbose_name="Ad")
@@ -18,8 +19,6 @@ class Room(models.Model):
     def __str__(self):
         return self.name
     
-
-
 class Contact(models.Model):
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
@@ -29,3 +28,15 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.name} {self.surname}"
+    class Meta:
+        verbose_name = "Mesaj"
+        verbose_name_plural = "Mesajlar"
+
+class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    ad = models.CharField(max_length=30, blank=True)
+    soyad = models.CharField(max_length=30, blank=True)
+    telefon = models.CharField(max_length=15, blank=True)
+    class Meta:
+        verbose_name = "Müşteri"
+        verbose_name_plural = "Müşteriler"
