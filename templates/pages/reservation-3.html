@@ -273,7 +273,11 @@
                             </div>
 
                             <!-- ========================  Cart navigation ======================== -->
-
+                            <form method="post" action="{% url 'complete_reservation' room_slug=room.slug %}">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button type="submit">Rezervasyonu Tamamla</button>
+                            </form>
                             <div class="clearfix">
                                 <div class="cart-block cart-block-footer cart-block-footer-price clearfix">
                                     <div>

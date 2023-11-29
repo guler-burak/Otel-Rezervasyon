@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.conf import settings
-from .models import Room, Contact
+from .models import Room, Contact, Reservation  
 from .forms import ContactForm, RegisterForm, LoginForm
 from django.contrib import messages
 from .forms import ReservationForm, Customer
@@ -83,18 +83,13 @@ def room_overview(request, room_slug):
 
     if request.method == 'POST':
         form = ReservationForm(request.POST)
+        form.room = room
         if form.is_valid():
-            checkin_date = form.cleaned_data['checkin_date']
-            checkout_date = form.cleaned_data['checkout_date']
-
-            context = {
-                'checkin_date': checkin_date,
-                'checkout_date': checkout_date,
-            }
             return render(request, 'pages/reservation-1.html', context)
 
     else:
         form = ReservationForm()
+        form.room = room
 
     context['form'] = form
     return render(request, 'pages/room-overview.html', context)
@@ -142,3 +137,29 @@ def reservation_step_3(request, room_slug):
     checkout_date = datetime.strptime(checkout_date_str, "%Y-%m-%d") if checkout_date_str else None
 
     return render(request, 'pages/reservation-3.html', {'room': room, 'checkin_date': checkin_date, 'checkout_date': checkout_date})
+
+def complete_reservation(request, room_slug):
+    room = get_object_or_404(Room, slug=room_slug)
+
+    if request.method == 'POST':
+        first_name = request.user.first_name
+        last_name = request.user.last_name
+        email = request.user.email
+        telefon = request.user.customer.telefon
+
+        checkin_date = request.session.get('checkin_date')
+        checkout_date = request.session.get('checkout_date')
+
+        reservation = Reservation(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            telefon=telefon,
+            name=room.name, 
+            checkin_date=checkin_date,
+            checkout_date=checkout_date
+        )
+        reservation.save()
+        return redirect('index')
+
+    return render(request, 'pages/reservation-3.html', {'room': room})
