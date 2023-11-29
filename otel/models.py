@@ -40,3 +40,15 @@ class Customer(models.Model):
     class Meta:
         verbose_name = "Müşteri"
         verbose_name_plural = "Müşteriler"
+
+class Reservation(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.EmailField()
+    telefon = models.CharField(max_length=15)
+    name = models.CharField(max_length=255)
+    checkin_date = models.DateField()
+    checkout_date = models.DateField()
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
