@@ -13,7 +13,6 @@ class RegisterForm(UserCreationForm):
     telefon = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Telefon Numarası'}))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Şifre'}))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Şifreyi Tekrar Girin'}))
-
     class Meta:
         model = User
         fields = ['ad', 'soyad', 'username', 'email', 'telefon', 'password1', 'password2'] 

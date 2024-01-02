@@ -76,6 +76,10 @@ def contact(request):
 
     return render(request, 'pages/contact.html', {'form': form})
 
+def calculate_price(start_date, end_date, daily_rate):
+    num_days = (end_date - start_date).days + 1
+    total_price = num_days * daily_rate
+    return total_price
 
 def room_overview(request, room_slug):
     room = get_object_or_404(Room, slug=room_slug)
@@ -104,10 +108,14 @@ def reservation(request, room_slug):
             checkin_date = form.cleaned_data['checkin_date']
             checkout_date = form.cleaned_data['checkout_date']
 
+            num_days = (checkout_date - checkin_date).days + 1
+            total_price = num_days * room.price
+
             request.session['checkin_date'] = checkin_date.strftime("%Y-%m-%d")
             request.session['checkout_date'] = checkout_date.strftime("%Y-%m-%d")
+            request.session['total_price'] = total_price
 
-            return render(request, 'pages/reservation-1.html', {'room': room, 'checkin_date': checkin_date, 'checkout_date': checkout_date})
+            return render(request, 'pages/reservation-1.html', {'room': room, 'checkin_date': checkin_date, 'checkout_date': checkout_date, 'total_price': total_price})
 
     else:
         form = ReservationForm()
@@ -117,15 +125,17 @@ def reservation(request, room_slug):
 def reservation_step_2(request, room_slug):
     room = get_object_or_404(Room, slug=room_slug)
 
-
     checkin_date_str = request.session.get('checkin_date')
     checkout_date_str = request.session.get('checkout_date')
-
 
     checkin_date = datetime.strptime(checkin_date_str, "%Y-%m-%d") if checkin_date_str else None
     checkout_date = datetime.strptime(checkout_date_str, "%Y-%m-%d") if checkout_date_str else None
 
-    return render(request, 'pages/reservation-2.html', {'room': room, 'checkin_date': checkin_date, 'checkout_date': checkout_date})
+    total_price = 0
+    if checkin_date and checkout_date:
+        total_price = calculate_price(checkin_date, checkout_date, room.price)
+
+    return render(request, 'pages/reservation-2.html', {'room': room, 'checkin_date': checkin_date, 'checkout_date': checkout_date, 'total_price': total_price})
 
 def reservation_step_3(request, room_slug):
     room = get_object_or_404(Room, slug=room_slug)
@@ -136,7 +146,11 @@ def reservation_step_3(request, room_slug):
     checkin_date = datetime.strptime(checkin_date_str, "%Y-%m-%d") if checkin_date_str else None
     checkout_date = datetime.strptime(checkout_date_str, "%Y-%m-%d") if checkout_date_str else None
 
-    return render(request, 'pages/reservation-3.html', {'room': room, 'checkin_date': checkin_date, 'checkout_date': checkout_date})
+    total_price = 0
+    if checkin_date and checkout_date:
+        total_price = calculate_price(checkin_date, checkout_date, room.price)
+
+    return render(request, 'pages/reservation-3.html', {'room': room, 'checkin_date': checkin_date, 'checkout_date': checkout_date, 'total_price': total_price})
 
 def complete_reservation(request, room_slug):
     room = get_object_or_404(Room, slug=room_slug)

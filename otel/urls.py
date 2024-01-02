@@ -8,7 +8,7 @@ from .views import complete_reservation
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('hakkında/', views.about, name='about'),
+    path('hakkimizda/', views.about, name='about'),
     path('iletisim/', views.contact, name='contact'),
     path('tesisler/', views.facility, name='facility'),
     path('room-category/', views.category, name='category'),
