@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <script>
+        window.onload = function() {
+            alert("Kayıt başarıyla tamamlandı şimdi giriş sayfasına yönlendiriliyorsunuz!");
+            window.location.href = '{% url "login" %}';
+        };
+    </script>
+</head>
+</html>

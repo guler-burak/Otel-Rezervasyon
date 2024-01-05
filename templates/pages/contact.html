@@ -51,37 +51,32 @@
                                                 <div class="contact-form clearfix">
                                                     <form action="" method="post">
                                                         {% csrf_token %}
+                                                        {{ form.as_p }}
+                                                        
+                                                        <style>
+                                                            input[type="text"],
+                                                            input[type="email"],
+                                                            textarea {
+                                                                color: black;
+                                                            }
+                                                        </style>
+                                                    
                                                         <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    {{ form.name }}
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    {{ form.surname }}
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    {{ form.email }}
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12">
-                                                                <div class="form-group">
-                                                                    {{ form.subject }}
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12">
-                                                                <div class="form-group">
-                                                                    {{ form.message }}
-                                                                </div>
-                                                            </div>
                                                             <div class="col-md-12 text-center">
                                                                 <input type="submit" class="btn btn-clean" value="Mesaj gönder" />
                                                             </div>
                                                         </div>
+                                                        
                                                     </form>
+                                                    <script>
+                                                        document.addEventListener('DOMContentLoaded', function() {
+                                                            var form = document.querySelector('form');
+                                                            if (form) {
+                                                                form.reset();
+                                                            }
+                                                        });
+                                                    </script>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
