@@ -26,13 +26,19 @@ def register(request):
             Customer.objects.create(user=user, ad=form.cleaned_data['ad'],
                                     soyad=form.cleaned_data['soyad'],
                                     telefon=form.cleaned_data['telefon'])
-            return redirect('index')
+            return redirect('success2')
         else:
             messages.error(request, 'Lütfen formu doğru bir şekilde doldurun.') 
     else:
         form = RegisterForm()
 
     return render(request, 'pages/register.html', {'form': form})
+    
+def success(request):
+    return render(request, 'pages/success.html')
+
+def success2(request):
+    return render(request, 'pages/success2.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -40,7 +46,7 @@ def login_view(request):
         if form.is_valid():
             if user := authenticate(request, username=form.cleaned_data['username'], password=form.cleaned_data['password']):
                 login(request, user)
-                return redirect('index')
+                return redirect('success')
             messages.error(request, 'Geçersiz kullanıcı adı veya şifre.')
     else:
         form = LoginForm()
@@ -63,13 +69,13 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             Contact.objects.create(
-                name=form.cleaned_data['name'],
-                surname=form.cleaned_data['surname'],
+                name=form.cleaned_data['ad'],
+                surname=form.cleaned_data['soyad'],
                 email=form.cleaned_data['email'],
-                subject=form.cleaned_data['subject'],
-                message=form.cleaned_data['message']
+                subject=form.cleaned_data['konu'],
+                message=form.cleaned_data['mesaj'],
+                saat=form.cleaned_data['saat'],
             )
-            messages.success(request, 'Mesajınız başarıyla gönderildi.')
             return redirect('index')
     else:
         form = ContactForm()
