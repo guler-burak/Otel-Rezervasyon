@@ -93,38 +93,18 @@
                             </div>
                             
                             <!--cart prices -->
-                            
-                            <div class="clearfix">
-                                <div class="cart-block cart-block-footer clearfix">
-                                    <div>
-                                        <strong>Discount 15%</strong>
-                                    </div>
-                                    <div>
-                                        <span>$  {{ room.price }}</span>
-                                    </div>
-                                </div>
-                                <div class="cart-block cart-block-footer clearfix">
-                                    <div>
-                                        <strong>TAX</strong>
-                                    </div>
-                                    <div>
-                                        <span>$  {{ room.price }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                        
                             <!--cart final price -->
                             <div class="clearfix">
                                 <div class="cart-block cart-block-footer cart-block-footer-price clearfix">
                                     <div>
                                         <span class="checkbox">
                                             <input type="checkbox" id="couponCodeID">
-                                            <label for="couponCodeID">Promo code</label>
                                             <input type="text" class="form-control form-coupon" value="" placeholder="Enter your coupon code" />
                                         </span>
                                     </div>
                                     <div>
-                                        <div class="h2 title">₺ {{ room.price }} x {{ total_price }} Gün = ₺ {{ total_price }}</div>
+                                        <div class="h2 title">₺{{ total_price }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -138,16 +118,19 @@
                                         <a href="#" class="btn btn-clean-dark">Change</a>
                                     </div>
                                     <div>
-                                        <a href="{% url 'reservation-step-2' room_slug=room.slug %}" class="btn btn-main">Rezervasyon Yap</a>
+                                        {% if user.is_authenticated %}
+                                            <a href="{% url 'reservation-step-2' room_slug=room.slug %}" class="btn btn-main">Rezervasyon Yap <span class="icon icon-chevron-right"></span></a>
+                                        {% else %}
+                                            <p>Rezervasyon yapabilmek için önce giriş yapmalısınız.</p>
+                                            <a href="{% url 'login' %}?next={% url 'reservation-step-2' room_slug=room.slug %}" class="btn btn-main">Giriş yap <span class="icon icon-chevron-right"></span></a>
+                                            <span>veya</span>
+                                            <a href="{% url 'register' %}?next={% url 'reservation-step-2' room_slug=room.slug %}" class="btn btn-main">Kayıt Ol <span class="icon icon-chevron-right"></span></a>
+                                        {% endif %}
                                     </div>
-                                    
                                 </div>
                             </div>
-                            
-
                         </div>
                     </div>
-
                 </div> <!--/container-->
             </div> <!--/checkout-->
 

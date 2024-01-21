@@ -230,56 +230,33 @@
                                         </p>
                                     </div>
                                     <div class="price">
-                                        <span class="final h3">₺ {{ room.price }}</span>
+                                        <span class="final h3"></span>
                                     </div>
                                     <!--delete-this-item-->
-                                    <span class="icon icon-cross icon-delete"></span>
                                 </div>
                             </div>
                             
-                            <!--cart prices -->
-                            
-                            <div class="clearfix">
-                                <div class="cart-block cart-block-footer clearfix">
-                                    <div>
-                                        <strong>Discount 15%</strong>
-                                    </div>
-                                    <div>
-                                        <span>$  {{ room.price }}</span>
-                                    </div>
-                                </div>
-                                <div class="cart-block cart-block-footer clearfix">
-                                    <div>
-                                        <strong>TAX</strong>
-                                    </div>
-                                    <div>
-                                        <span>$  {{ room.price }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!--cart final price -->
                             <div class="clearfix">
                                 <div class="cart-block cart-block-footer cart-block-footer-price clearfix">
                                     <div>
                                         <span class="checkbox">
                                             <input type="checkbox" id="couponCodeID">
-                                            <label for="couponCodeID">Promo code</label>
                                             <input type="text" class="form-control form-coupon" value="" placeholder="Enter your coupon code" />
                                         </span>
                                     </div>
                                     <div>
-                                        <div class="h2 title">₺ {{ room.price }} x {{ total_price }} Gün = ₺ {{ total_price }}</div>
+                                        <div class="h2 title">₺{{ total_price }}</div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- ========================  Cart navigation ======================== -->
+                            
+                            <!-- Cart navigation and form -->
                             <form method="post" action="{% url 'complete_reservation' room_slug=room.slug %}">
                                 {% csrf_token %}
                                 {{ form.as_p }}
-                                <button type="submit">Rezervasyonu Tamamla</button>
+                                <button type="submit" class="btn btn-main">Rezervasyonu Tamamla</button>
                             </form>
+                            
                             <div class="clearfix">
                                 <div class="cart-block cart-block-footer cart-block-footer-price clearfix">
                                     <div>
