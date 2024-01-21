@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-^iidxwk5s@i&84s%ozf0sy5g77-j+j_g9jc25r2xa3-9mj#(h2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+CAPTCHA_FONT_SIZE = 40
 
 # Application definition
 
